@@ -1,0 +1,33 @@
+
+<h1>Listing NFL Games</h1>
+ 
+<table border="1">
+  <tr>
+    <th>Away</th>
+    <th>Home</th>
+    <th>Away Win Pct</th>
+    <th>Home Win Pct</th>
+  </tr>
+ 
+  <% @nflgames.each do |nflgame| %>
+    <tr>
+      <td align="center"><%= nflgame.away %></td>
+      <td align="center"><%= nflgame.home %></td>
+      <td align="center"><%= nflgame.awayWPct %></td>
+      <td align="center"><%= nflgame.homeWPct %></td>
+      <td align="center"><%= link_to 'Show', nflgame_path(nflgame) %></td>
+      <td align="center"><%= link_to 'Edit', edit_nflgame_path(nflgame) %></td>
+      <td align="center"><%= link_to 'Delete', nflgame_path(nflgame),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+	<%= link_to 'Add NFL Game', new_nflgame_path %>
+</p>
+
+<p>
+	<%= link_to 'Back to Home', controller: 'home' %>
+</p>

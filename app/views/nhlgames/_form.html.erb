@@ -1,0 +1,81 @@
+<%= form_for @nhlgame do |f| %>
+ 
+  <% if @nhlgame.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@nhlgame.errors.count, "error") %> prohibited
+        this game from being saved:
+      </h2>
+      <ul>
+        <% @nhlgame.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :Home %><br>
+    <%= f.text_field :home %>
+  </p>
+ 
+  <p>
+    <%= f.label :Away %><br>
+    <%= f.text_field :away %>
+  </p>
+  
+  <p>
+    <%= f.label "Home Wins" %><br>
+    <%= f.text_field :homeW %>
+  </p>
+  
+  <p>
+    <%= f.label "Home Losses" %><br>
+    <%= f.text_field :homeL %>
+  </p>
+ 
+  <p>
+    <%= f.label "Home OT Losses" %><br>
+    <%= f.text_field :homeOTL %>
+  </p>
+  
+    <p>
+    <%= f.label "Away Wins" %><br>
+    <%= f.text_field :awayW %>
+  </p>
+  
+  <p>
+    <%= f.label "Away Losses" %><br>
+    <%= f.text_field :awayL %>
+  </p>
+ 
+  <p>
+    <%= f.label "Away OT Losses" %><br>
+    <%= f.text_field :awayOTL %>
+  </p>
+  
+  <p>
+    <%= f.label "Home Goals Scored" %><br>
+    <%= f.text_field :homeGF %>
+  </p>
+  
+  <p>
+    <%= f.label "Home Goals Allowed" %><br>
+    <%= f.text_field :homeGA %>
+  </p>
+  
+    <p>
+    <%= f.label "Away Goals Scored" %><br>
+    <%= f.text_field :awayGF %>
+  </p>
+  
+  <p>
+    <%= f.label "Away Goals Allowed" %><br>
+    <%= f.text_field :awayGA %>
+  </p>
+ 
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+ 
+<% end %>

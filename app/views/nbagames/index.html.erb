@@ -1,0 +1,37 @@
+
+<h1>Listing NBA Games</h1>
+ 
+<table border="1">
+  <tr>
+    <th>Away</th>
+    <th>Home</th>
+    <th>Away Win Pct</th>
+    <th>Home Win Pct</th>
+    <th>Away PPG</th>
+    <th>Home PPG</th>
+  </tr>
+ 
+  <% @nbagames.each do |nbagame| %>
+    <tr>
+      <td align="center"><%= nbagame.away %></td>
+      <td align="center"><%= nbagame.home %></td>
+      <td align="center"><%= nbagame.awayWPct %></td>
+      <td align="center"><%= nbagame.homeWPct %></td>
+      <td align="center"><%= nbagame.awayPPG %></td>
+      <td align="center"><%= nbagame.homePPG %></td>
+      <td align="center"><%= link_to 'Show', nbagame_path(nbagame) %></td>
+      <td align="center"><%= link_to 'Edit', edit_nbagame_path(nbagame) %></td>
+      <td align="center"><%= link_to 'Delete', nbagame_path(nbagame),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+	<%= link_to 'Add NBA Game', new_nbagame_path %>
+</p>
+
+<p>
+	<%= link_to 'Back to Home', controller: 'home' %>
+</p>

@@ -1,0 +1,49 @@
+
+<h1>Listing NHL Games</h1>
+ 
+<table border="1">
+  <tr>
+    <th>Home</th>
+    <th>Away</th>
+    <th>Home W</th>
+    <th>Home L</th>
+    <th>Home OTL</th>
+    <th>Away W</th>
+    <th>Away L</th>
+    <th>Away OTL</th>
+    <th>Home GF</th>
+    <th>Home GA</th>
+    <th>Away GF</th>
+    <th>Away GA</th>
+  </tr>
+ 
+  <% @nhlgames.each do |nhlgame| %>
+    <tr>
+      <td align="center"><%= nhlgame.home %></td>
+      <td align="center"><%= nhlgame.away %></td>
+      <td align="center"><%= nhlgame.homeW %></td>
+      <td align="center"><%= nhlgame.homeL %></td>
+      <td align="center"><%= nhlgame.homeOTL %></td>
+      <td align="center"><%= nhlgame.awayW %></td>
+      <td align="center"><%= nhlgame.awayL %></td>
+      <td align="center"><%= nhlgame.awayOTL %></td>
+      <td align="center"><%= nhlgame.homeGF %></td>
+      <td align="center"><%= nhlgame.homeGA %></td>
+      <td align="center"><%= nhlgame.awayGF %></td>
+      <td align="center"><%= nhlgame.awayGA %></td>
+      <td align="center"><%= link_to 'Show', nhlgame_path(nhlgame) %></td>
+      <td align="center"><%= link_to 'Edit', edit_nhlgame_path(nhlgame) %></td>
+      <td align="center"><%= link_to 'Delete', nhlgame_path(nhlgame),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+	<%= link_to 'Add NHL Game', new_nhlgame_path %>
+</p>
+
+<p>
+	<%= link_to 'Back to Home', controller: 'home' %>
+</p>

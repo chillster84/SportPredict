@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home: MyString
+  away: MyString
+  homeWPct: 1.5
+  awayWPct: 1.5
+  homePPG: 1.5
+  awayPPG: 1.5
+
+two:
+  home: MyString
+  away: MyString
+  homeWPct: 1.5
+  awayWPct: 1.5
+  homePPG: 1.5
+  awayPPG: 1.5

@@ -1,0 +1,25 @@
+
+<h1>Showing NBA Game</h1>
+ 
+<table border="1">
+  <tr>
+    <th>Away</th>
+    <th>Home</th>
+    <th>Away Win Pct</th>
+    <th>Home Win Pct</th>
+    <th>Away PPG</th>
+    <th>Home PPG</th>
+  </tr>
+ 
+    <tr>
+      <td align="center"><%= @nbagame.away %></td>
+      <td align="center"><%= @nbagame.home %></td>
+      <td align="center"><%= @nbagame.awayWPct %></td>
+      <td align="center"><%= @nbagame.homeWPct %></td>
+      <td align="center"><%= @nbagame.awayPPG %></td>
+      <td align="center"><%= @nbagame.homePPG %></td>
+    </tr>
+</table>
+
+<%= link_to 'Edit', edit_nbagame_path(@nbagame) %>
+<%= link_to 'Back', nbagames_path %>

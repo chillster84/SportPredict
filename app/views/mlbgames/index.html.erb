@@ -1,0 +1,29 @@
+
+<h1>Listing MLB Games</h1>
+ 
+<table border="1">
+  <tr>
+    <th>Away</th>
+    <th>Home</th>
+  </tr>
+ 
+  <% @mlbgames.each do |mlbgame| %>
+    <tr>
+      <td align="center"><%= mlbgame.away %></td>
+      <td align="center"><%= mlbgame.home %></td>
+      <td align="center"><%= link_to 'Show', mlbgame_path(mlbgame) %></td>
+      <td align="center"><%= link_to 'Edit', edit_mlbgame_path(mlbgame) %></td>
+      <td align="center"><%= link_to 'Delete', mlbgame_path(mlbgame),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+	<%= link_to 'Add MLB Game', new_mlbgame_path %>
+</p>
+
+<p>
+	<%= link_to 'Back to Home', controller: 'home' %>
+</p>

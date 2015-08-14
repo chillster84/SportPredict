@@ -1,0 +1,16 @@
+<h1>Showing MLB Game</h1>
+ 
+<table border="1">
+  <tr>
+    <th>Away</th>
+    <th>Home</th>
+  </tr>
+ 
+    <tr>
+      <td align="center"><%= @mlbgame.away %></td>
+      <td align="center"><%= @mlbgame.home %></td>
+    </tr>
+</table>
+
+<%= link_to 'Edit', edit_mlbgame_path(@mlbgame) %>
+<%= link_to 'Back', mlbgames_path %>

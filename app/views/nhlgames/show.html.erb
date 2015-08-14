@@ -1,0 +1,36 @@
+
+<h1>Showing NHL Game</h1>
+ 
+<table border="1">
+  <tr>
+    <th>Home</th>
+    <th>Away</th>
+    <th>Home W</th>
+    <th>Home L</th>
+    <th>Home OTL</th>
+    <th>Away W</th>
+    <th>Away L</th>
+    <th>Away OTL</th>
+    <th>Home GF</th>
+    <th>Home GA</th>
+    <th>Away GF</th>
+    <th>Away GA</th>
+  </tr>
+    <tr>
+      <td align="center"><%= @nhlgame.home %></td>
+      <td align="center"><%= @nhlgame.away %></td>
+      <td align="center"><%= @nhlgame.homeW %></td>
+      <td align="center"><%= @nhlgame.homeL %></td>
+      <td align="center"><%= @nhlgame.homeOTL %></td>
+      <td align="center"><%= @nhlgame.awayW %></td>
+      <td align="center"><%= @nhlgame.awayL %></td>
+      <td align="center"><%= @nhlgame.awayOTL %></td>
+      <td align="center"><%= @nhlgame.homeGF %></td>
+      <td align="center"><%= @nhlgame.homeGA %></td>
+      <td align="center"><%= @nhlgame.awayGF %></td>
+      <td align="center"><%= @nhlgame.awayGA %></td>
+    </tr>
+</table>
+
+<%= link_to 'Edit', edit_nhlgame_path(@nhlgame) %>
+<%= link_to 'Back', nhlgames_path %>

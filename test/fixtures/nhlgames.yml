@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home: MyString
+  away: MyString
+  homeW: 1
+  homeL: 1
+  homeOTL: 1
+  awayW: 1
+  awayL: 1
+  awayOTL: 1
+  homeGF: 1
+  homeGA: 1
+  awayGF: 1
+  awayGA: 1
+
+two:
+  home: MyString
+  away: MyString
+  homeW: 1
+  homeL: 1
+  homeOTL: 1
+  awayW: 1
+  awayL: 1
+  awayOTL: 1
+  homeGF: 1
+  homeGA: 1
+  awayGF: 1
+  awayGA: 1

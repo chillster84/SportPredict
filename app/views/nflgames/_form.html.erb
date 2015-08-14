@@ -1,0 +1,41 @@
+<%= form_for @nflgame do |f| %>
+ 
+  <% if @nflgame.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@nflgame.errors.count, "error") %> prohibited
+        this game from being saved:
+      </h2>
+      <ul>
+        <% @nflgame.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :Home %><br>
+    <%= f.text_field :home %>
+  </p>
+ 
+  <p>
+    <%= f.label :Away %><br>
+    <%= f.text_field :away %>
+  </p>
+  
+  <p>
+    <%= f.label "Home Win %" %><br>
+    <%= f.text_field :homeWPct %>
+  </p>
+  
+  <p>
+    <%= f.label "Away Win %" %><br>
+    <%= f.text_field :awayWPct %>
+  </p>
+ 
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+ 
+<% end %>
