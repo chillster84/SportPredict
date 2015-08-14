@@ -51,7 +51,7 @@ end
 
 	private
 		def mlbgame_params
-		  params.require(:mlbgame).permit(:home, :away, :homeWPct, :awayWPct)
+		  params.require(:mlbgame).permit(:home, :away, :date)
 		end
 
 end

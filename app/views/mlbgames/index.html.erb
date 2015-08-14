@@ -3,12 +3,14 @@
  
 <table border="1">
   <tr>
+  	<th>Date</th>
     <th>Away</th>
     <th>Home</th>
   </tr>
  
   <% @mlbgames.each do |mlbgame| %>
     <tr>
+    	<td align="center"><%=mlbgame.date %></td>
       <td align="center"><%= mlbgame.away %></td>
       <td align="center"><%= mlbgame.home %></td>
       <td align="center"><%= link_to 'Show', mlbgame_path(mlbgame) %></td>
