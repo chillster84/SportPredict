@@ -3,21 +3,15 @@
  
 <table border="1">
   <tr>
-    <th>Away</th>
-    <th>Home</th>
-    <th>Away Win Pct</th>
-    <th>Home Win Pct</th>
-    <th>Away PPG</th>
-    <th>Home PPG</th>
+    <% @stats.each do |col, val| %>
+    	<th><%= col %></th>
+    <% end %>
   </tr>
  
     <tr>
-      <td align="center"><%= @nbagame.away %></td>
-      <td align="center"><%= @nbagame.home %></td>
-      <td align="center"><%= @nbagame.awayWPct %></td>
-      <td align="center"><%= @nbagame.homeWPct %></td>
-      <td align="center"><%= @nbagame.awayPPG %></td>
-      <td align="center"><%= @nbagame.homePPG %></td>
+    	<% @stats.each do |col, val| %>
+    		<td align="center"><%= val %></td>
+    	<% end %>
     </tr>
 </table>
 

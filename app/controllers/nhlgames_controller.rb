@@ -5,14 +5,20 @@ class NhlgamesController < ApplicationController
 
 	def show	
 		@nhlgame = Nhlgame.find(params[:id])
+		@stats = @nhlgame.attributes
+		["id", "created_at", "updated_at"].each { |k| @stats.delete(k) }
 	end	
 
 	def new
   @nhlgame = Nhlgame.new
+  @stats = @nhlgame.attributes
+		["id", "created_at", "updated_at"].each { |k| @stats.delete(k) }
 end
 
 	def edit
 		@nhlgame = Nhlgame.find(params[:id])
+		@stats = @nhlgame.attributes
+		["id", "created_at", "updated_at"].each { |k| @stats.delete(k) }
 	end
 
 	def create

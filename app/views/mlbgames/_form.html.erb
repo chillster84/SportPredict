@@ -14,15 +14,12 @@
     </div>
   <% end %>
  
-  <p>
-    <%= f.label :Home %><br>
-    <%= f.text_field :home %>
+	<% @stats.each do |col, val| %>
+		<p>
+    <%= f.label col %><br>
+    <%= f.text_field col %>
   </p>
- 
-  <p>
-    <%= f.label :Away %><br>
-    <%= f.text_field :away %>
-  </p>
+  <% end %>
  
   <p>
     <%= f.submit 'Submit' %>

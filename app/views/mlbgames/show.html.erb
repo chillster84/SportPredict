@@ -2,13 +2,15 @@
  
 <table border="1">
   <tr>
-    <th>Away</th>
-    <th>Home</th>
+    <% @stats.each do |col, val| %>
+    	<th><%= col %></th>
+    <% end %>
   </tr>
  
     <tr>
-      <td align="center"><%= @mlbgame.away %></td>
-      <td align="center"><%= @mlbgame.home %></td>
+    	<% @stats.each do |col, val| %>
+    		<td align="center"><%= val %></td>
+    	<% end %>
     </tr>
 </table>
 

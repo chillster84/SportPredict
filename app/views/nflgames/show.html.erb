@@ -2,19 +2,18 @@
  
 <table border="1">
   <tr>
-    <th>Away</th>
-    <th>Home</th>
-    <th>Away Win Pct</th>
-    <th>Home Win Pct</th>
+    <% @stats.each do |col, val| %>
+    	<th><%= col %></th>
+    <% end %>
   </tr>
  
     <tr>
-      <td align="center"><%= @nflgame.away %></td>
-      <td align="center"><%= @nflgame.home %></td>
-      <td align="center"><%= @nflgame.awayWPct %></td>
-      <td align="center"><%= @nflgame.homeWPct %></td>
+    	<% @stats.each do |col, val| %>
+    		<td align="center"><%= val %></td>
+    	<% end %>
     </tr>
 </table>
+
 
 <%= link_to 'Edit', edit_nflgame_path(@nflgame) %>
 <%= link_to 'Back', nflgames_path %>

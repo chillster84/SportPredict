@@ -6,14 +6,20 @@ class NflgamesController < ApplicationController
 
 	def show	
 		@nflgame = Nflgame.find(params[:id])
+		@stats = @nflgame.attributes
+		["id", "created_at", "updated_at"].each { |k| @stats.delete(k) }
 	end	
 
 	def new
   @nflgame = Nflgame.new
+  @stats = @nflgame.attributes
+		["id", "created_at", "updated_at"].each { |k| @stats.delete(k) }
 end
 
 	def edit
 		@nflgame = Nflgame.find(params[:id])
+		@stats = @nflgame.attributes
+		["id", "created_at", "updated_at"].each { |k| @stats.delete(k) }
 	end
 
 	def create
