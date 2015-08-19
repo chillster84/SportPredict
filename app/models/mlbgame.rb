@@ -1,4 +1,35 @@
 class Mlbgame < ActiveRecord::Base
-	validates :away, presence: true, length: { is: 3 }
-	validates :home, presence: true, length: { is: 3 }
+	def self.teamID
+		{ 'Athletics' => 10, 
+			'Red Sox' => 3,
+			'Orioles' => 2,
+			'Cubs' => 17,
+			'Diamondbacks' =>15,
+			'Rangers'=> 13,
+			'Indians' => 5,
+			'Royals'=> 7,
+			'Yankees' => 9,
+			'Twins' => 8,
+			'Tigers' => 6,
+			'White Sox' => 4,
+			'Giants' => 30,
+			'Padres' => 29,
+			'Cardinals' => 28,
+			'Pirates' => 27,
+			'Phillies' => 26,
+			'Mets' => 25,
+			'Nationals' => 24,
+			'Brewers' => 23,
+			'Dodgers' => 22,
+			'Astros' => 21,
+			'Marlins' => 20,
+			'Rockies' => 19,
+			'Reds' => 18,
+			'Braves' => 16,
+			'Blue Jays' => 14,
+			'Rays' => 12,
+			'Mariners' => 11,
+			'Angels' => 1 }
+			
+	end
 end

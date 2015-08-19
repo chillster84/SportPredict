@@ -12,17 +12,35 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
  
-	<% @stats.each do |col, val| %>
 		<p>
-    <%= f.label col %><br>
-    <%= f.text_field col %>
+    <%= f.label "Date" %><br>
+    <%= f.text_field :date %>
   </p>
-  <% end %>
+  
+  <p>
+    <%= f.label "Away" %><br>
+    <%= f.text_field :away %>
+  </p>
+  
+  <p>
+    <%= f.label "Home" %><br>
+    <%= f.text_field :home %>
+  </p>
+ 
+   <p>
+    <%= f.label "Away SP" %><br>
+    <%= f.text_field :a_name %>
+  </p>
+  
+  <p>
+    <%= f.label "Home SP" %><br>
+    <%= f.text_field :h_name %>
+  </p>
  
   <p>
     <%= f.submit 'Submit' %>
   </p>
  
-<% end %>
+	<% end %>
