@@ -1,4 +1,38 @@
 class Mlbgame < ActiveRecord::Base
+	
+	def self.teamShort
+		{ 'MIN' => 'Twins',
+			'NYY' => 'Yankees',
+			'SEA' => 'Mariners',
+			'TEX' => 'Rangers',
+			'MIA' => 'Marlins',
+			'MIL' => 'Brewers',
+			'LAD' => 'Dodgers',
+			'OAK' => 'Athletics',
+			'ATL' => 'Braves',
+			'SD' => 'Padres',
+			'NYM' => 'Mets',
+			'BAL' => 'Orioles',
+			'TOR' => 'Blue Jays',
+			'PHI' => 'Phillies',
+			'ARI' => 'Diamondbacks',
+			'PIT' => 'Pirates',
+			'CLE' => 'Indians',
+			'BOS' => 'Red Sox',
+			'KC' => 'Royals',
+			'CIN' => 'Reds',
+			'SF' => 'Giants',
+			'STL' => 'Cardinals',
+			'DET' => 'Tigers',
+			'CHC' => 'Cubs',
+			'TB' => 'Rays',
+			'HOU' => 'Astros',
+			'WSH' => 'Nationals',
+			'COL' => 'Rockies',
+			'CHW' => 'White Sox',
+			'LAA' => 'Angels' }
+	end
+	
 	def self.teamID
 		{ 'Athletics' => 10, 
 			'Red Sox' => 3,

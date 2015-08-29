@@ -1,11 +1,36 @@
 
 <h1>Listing MLB Games</h1>
+<h2>Prediction Record: <%=@correct %>%</h2>
+<h2>Prediction 2 Record: <%=@correct2 %>%</h2>
+ 
+<p>
+	<%= link_to "Add Today's MLB Games", new_mlbgame_path %>
+</p>
+
+<%= form_tag("/mlbgames/scores", method: "get") do %>
+  <%= label_tag(:date, "Date:") %>
+  <%= text_field_tag(:date) %>
+  <%= submit_tag("Add This Day's Scores") %>
+<% end %>
+
+<p>
+	<%= link_to 'Back to Home', controller: 'home' %>
+</p>
+ 
  
 <table border="1">
   <tr>
   	<th>Date</th>
     <th>Away</th>
     <th>Home</th>
+    <th>Away Pred 1</th>
+    <th>Home Pred 1</th>
+    <th>Away Pred 2</th>
+    <th>Home Pred 2</th>
+    <th>Away Actual</th>
+    <th>Home Actual</th>
+    <th>Correct</th>
+    <th>Correct2</th>
   </tr>
  
   <% @mlbgames.each do |mlbgame| %>
@@ -13,6 +38,22 @@
     	<td align="center"><%=mlbgame.date %></td>
       <td align="center"><%= mlbgame.away %></td>
       <td align="center"><%= mlbgame.home %></td>
+      <td align="center"><%= mlbgame.a_pred.round(2) %></td>
+      <td align="center"><%= mlbgame.h_pred.round(2) %></td>
+      <% if mlbgame.a_pred2.nil? %>
+      <td align="center">0</td>
+      <% else %>
+      <td align="center"><%= mlbgame.a_pred2.round(2) %></td>
+      <% end %>
+      <% if mlbgame.h_pred2.nil? %>
+      <td align="center">0</td>
+      <% else %>
+      <td align="center"><%= mlbgame.h_pred2.round(2) %></td>
+      <% end %>
+      <td align="center"><%= mlbgame.a_actual %></td>
+      <td align="center"><%= mlbgame.h_actual %></td>
+      <td align="center"><%= mlbgame.correct %></td>
+      <td align="center"><%= mlbgame.correct2 %></td>
       <td align="center"><%= link_to 'Show', mlbgame_path(mlbgame) %></td>
       <td align="center"><%= link_to 'Edit', edit_mlbgame_path(mlbgame) %></td>
       <td align="center"><%= link_to 'Delete', mlbgame_path(mlbgame),
@@ -21,11 +62,3 @@
     </tr>
   <% end %>
 </table>
-
-<p>
-	<%= link_to 'Add MLB Game', new_mlbgame_path %>
-</p>
-
-<p>
-	<%= link_to 'Back to Home', controller: 'home' %>
-</p>

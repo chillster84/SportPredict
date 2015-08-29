@@ -37,6 +37,11 @@
   	Home: <%= @mlbgame.h_pred %>
  	</p>
  	
+  <p>Prediction 2:<br>
+  	Away: <%= @mlbgame.a_pred2 %><br>
+  	Home: <%= @mlbgame.h_pred2 %>
+ 	</p>
+ 	
    <p>
     <%= f.label "Away Score" %><br>
     <%= f.text_field :a_actual %>
@@ -48,8 +53,13 @@
   </p>
   
   <p>
-    <%= f.label "Correct? "%><br>
+    <%= f.label "Correct ? "%><br>
     <%= f.text_field :correct %>
+  </p>
+  
+  <p>
+    <%= f.label "Correct2 ? "%><br>
+    <%= f.text_field :correct2 %>
   </p>
  
   <p>

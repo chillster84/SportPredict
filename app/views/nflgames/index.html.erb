@@ -1,16 +1,44 @@
 
 <h1>Listing NFL Games</h1>
+<h2>Prediction Record: <%=@correct %>%</h2>
+ 
+<p>
+	<%= link_to "Add Today's NFL Games", new_nflgame_path %>
+</p>
+
+<%= form_tag("/nflgames/scores", method: "get") do %>
+  <%= label_tag(:date, "Date:") %>
+  <%= text_field_tag(:date) %>
+  <%= submit_tag("Add This Day's Scores") %>
+<% end %>
+
+<p>
+	<%= link_to 'Back to Home', controller: 'home' %>
+</p>
+ 
  
 <table border="1">
   <tr>
+  	<th>Date</th>
     <th>Away</th>
     <th>Home</th>
+    <th>Away Pred</th>
+    <th>Home Pred</th>
+    <th>Away Actual</th>
+    <th>Home Actual</th>
+    <th>Correct</th>
   </tr>
  
   <% @nflgames.each do |nflgame| %>
     <tr>
+    	<td align="center"><%=nflgame.date %></td>
       <td align="center"><%= nflgame.away %></td>
       <td align="center"><%= nflgame.home %></td>
+      <td align="center"><%= nflgame.a_pred.round(2) %></td>
+      <td align="center"><%= nflgame.h_pred.round(2) %></td>
+      <td align="center"><%= nflgame.a_actual %></td>
+      <td align="center"><%= nflgame.h_actual %></td>
+      <td align="center"><%= nflgame.correct %></td>
       <td align="center"><%= link_to 'Show', nflgame_path(nflgame) %></td>
       <td align="center"><%= link_to 'Edit', edit_nflgame_path(nflgame) %></td>
       <td align="center"><%= link_to 'Delete', nflgame_path(nflgame),
@@ -19,11 +47,3 @@
     </tr>
   <% end %>
 </table>
-
-<p>
-	<%= link_to 'Add NFL Game', new_nflgame_path %>
-</p>
-
-<p>
-	<%= link_to 'Back to Home', controller: 'home' %>
-</p>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817192633) do
+ActiveRecord::Schema.define(version: 20150828044239) do
 
   create_table "mlbgames", force: :cascade do |t|
     t.string   "away"
@@ -48,6 +48,11 @@ ActiveRecord::Schema.define(version: 20150817192633) do
     t.integer  "h_actual"
     t.integer  "a_actual"
     t.integer  "correct"
+    t.float    "h_rd"
+    t.float    "a_rd"
+    t.float    "h_pred2"
+    t.float    "a_pred2"
+    t.integer  "correct2"
   end
 
   create_table "nbagames", force: :cascade do |t|
@@ -68,6 +73,24 @@ ActiveRecord::Schema.define(version: 20150817192633) do
     t.float    "awayWPct"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "a_SRS"
+    t.float    "h_SRS"
+    t.float    "a_TO"
+    t.float    "h_TO"
+    t.float    "a_PYA"
+    t.float    "h_PYA"
+    t.float    "a_RYA"
+    t.float    "h_RYA"
+    t.float    "a_DPYA"
+    t.float    "h_DPYA"
+    t.float    "a_DRYA"
+    t.float    "h_DRYA"
+    t.float    "a_pred"
+    t.float    "h_pred"
+    t.integer  "a_actual"
+    t.integer  "h_actual"
+    t.integer  "correct"
+    t.date     "date"
   end
 
   create_table "nhlgames", force: :cascade do |t|

@@ -1,6 +1,29 @@
 <h1>Add a MLB Game</h1>
 
+<table border="1">
+    <% @mlbgames.each do |game| %>
+    	<tr>
+    		<td><%= Time.now.strftime("%d/%m/%Y") %>
+    		<td><%= game.away %></td>
+    		<td><%= game.home %></td>
+    		<td><%= game.a_name %></td>
+    		<td><%= game.h_name %></td>
+    		<td><%= link_to 'Add Game', {:controller => "mlbgames", 
+                       :action => "create", 
+                       :mlbgame => {
+                       :date => Time.now.strftime("%d/%m/%Y"),
+                       :away => game.away,
+                       :home => game.home,
+                       :a_name => game.a_name,
+                       :h_name => game.h_name}},
+                       :method => "post" %></td>
+    	</tr>
+    <% end %>
+</table>
 
-<%= render 'form' %>
+<%= link_to 'Add All', {:controller => "mlbgames", 
+                       :action => "createAll", 
+                       :mlbgames => @mlbgames },
+                       :method => "post" %>
 
 <%= link_to 'Back', mlbgames_path %>
